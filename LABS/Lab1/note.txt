@@ -1,0 +1,48 @@
+Problem 1. CMOS VTC
+
+maximum value for VIL: 0.9
+minimum value for VIL: 1.2581
+low noise margin: 0.6
+high noise margin: 1.4419
+PFET width to center VTC: 35
+revised low noise margin: 0.9387
+reivsed high noise margin: 0.9871
+
+The problem is that the VTC isn't centered because in the manufacturing process we're modeling, n-channel MOSFETs have much better conductance than p-channel MOSFETs.
+
+by sizing the MOSFETs so that the VTC is centered, we maximize the noise immunity of the inverter.
+
+
+
+
+Problem 2. Contamination and propagation times
+
+t_c,1 falling input: 20.433
+t_p,1 falling input: 114.199
+t_c,2 rising input: 11.74
+t_p,2 rising input: 35.22
+t_cd: 11.74
+t_pd: 114.199
+
+
+
+
+Problem 3. CMOS buffers?
+
+Suppose we tried to build a CMOS buffer using an NFET pullup and PFET pulldown — what bad thing would happen?
+
+lowest observed voltage for out1: 0.5
+highest -: 2.5
+lowest observed voltage for out2: 1
+highest -: 1.99
+lowest observed voltage for out3: 1.5
+highest -: 1.5
+
+This is why we don't use PFETs in pulldown circuits or NFETs in pullup circuits — in that configuration we observe threshold drops in the max and min output voltages, which accumulate and cause the buffers to produce meaningless outputs.
+
+
+
+
+Problem 4. Design Problem: CMOS gate design
+
+

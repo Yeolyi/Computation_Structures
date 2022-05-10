@@ -1,0 +1,8 @@
+If we set the inputs of a particular CMOS gate to voltages that correspond to valid logic levels, we would expect the static power dissipation of the gate to be essentially zero.
+
+To decrease the output rise time of a CMOS gate one could increase the width of all pfets.
+
+Number of mosfets needed to implement "XOR": 10
+Number of mosfets needed to implement "A > B": 6
+
+TODO: 세가지 goal 모두 하기

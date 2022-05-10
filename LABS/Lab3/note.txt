@@ -1,0 +1,32 @@
+nano: 1e-9
+synchronizing sequence: In computer science, more precisely, in the theory of deterministic finite automata (DFA), a synchronizing word or reset sequence is a word in the input alphabet of the DFA that sends any state of the DFA to one and the same state
+
+...an unlimited memory capacity obtained in the form of an infinite tape marked out into squares, on each of which a symbol could be printed. At any moment there is one symbol in the machine; it is called the scanned symbol. The machine can alter the scanned symbol and its behavior is in part determined by that symbol, but the symbols on the tape elsewhere do not affect the behavior of the machine. However, the tape can be moved back and forth through the machine, this being one of the elementary operations of the machine. Any symbol on the tape may therefore eventually have an innings. (Turing, 1948)
+
+We now refer to this device as a Turing Machine (TM) and use it as our definition for what it means to be computable, i.e., we believe (Church's Thesis) that a function is algorithmically computable if and only if it's computable by a TM.
+
+https://en.wikipedia.org/wiki/Busy_beaver
+https://namu.wiki/w/바쁜%20비버
+
+states left check open close
+
+action left ( left        ( r
+action left 0 left        0 r
+action left ) left        ) r
+action left - open        - l
+
+action open ) *halt*      0 -
+action open 0 open        0 l
+action open ( close       0 l
+action open - check       - r
+
+action close ( close      ( l
+action close 0 close      0 l
+action close ) left       0 r
+action close - *halt*     0 -
+
+action check ) *halt*     0 -
+action check - *halt*     1 -
+action check 0 check      0 r
+
+https://cs.stackexchange.com/questions/11044/two-state-turing-machine-for-parenthesis-matching
